@@ -324,6 +324,7 @@ flycheck_*.el
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+launch.json
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,jetbrains,vscode,git,go,tags,backup,test
 

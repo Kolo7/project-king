@@ -1,0 +1,10 @@
+version: '3'
+services:
+  hystrix-dashboard:
+    image: mlabouardy/hystrix-dashboard:latest
+    restart: "no"
+    container_name: hystrix-dashboard
+    ports:
+      - "8081:9002"   
+    # command: redis-server /etc/redis/redis.conf 
+    privileged: true
