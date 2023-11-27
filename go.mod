@@ -2,41 +2,43 @@ module github.com/Kolo7/project-king
 
 go 1.18
 
-require gorm.io/driver/mysql v1.5.1
+require (
+	github.com/go-kit/kit v0.13.0
+	github.com/gorilla/mux v1.8.0
+	github.com/recolabs/microgen v1.0.5
+	github.com/sashabaranov/go-openai v1.16.0
+	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	google.golang.org/grpc v1.41.0
+)
 
 require (
-	github.com/go-kit/kit v0.13.0 // indirect
-	github.com/sashabaranov/go-openai v1.16.0 // indirect
+	github.com/felixge/httpsnoop v1.0.4 // indirect
+	github.com/go-kit/log v0.2.0 // indirect
+	github.com/go-logfmt/logfmt v0.5.1 // indirect
+	github.com/go-logr/logr v1.3.0 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/smartystreets/goconvey v1.8.1 // indirect
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.46.1 // indirect
+	go.opentelemetry.io/otel v1.21.0 // indirect
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric v0.44.0 // indirect
+	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.21.0 // indirect
+	go.opentelemetry.io/otel/metric v1.21.0 // indirect
+	go.opentelemetry.io/otel/sdk v1.21.0 // indirect
+	go.opentelemetry.io/otel/sdk/metric v1.21.0 // indirect
+	go.opentelemetry.io/otel/trace v1.21.0 // indirect
+	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/time v0.4.0 // indirect
+	google.golang.org/genproto v0.0.0-20210917145530-b395a37504d4 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
 )
 
 require (
 	git.imgo.tv/ft/hystrix-go v1.0.1
-	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5 // indirect
-	github.com/allegro/bigcache/v3 v3.1.0 // indirect
-	github.com/go-ole/go-ole v1.3.0 // indirect
-	github.com/go-sql-driver/mysql v1.7.1 // indirect
-	github.com/google/gops v0.3.28 // indirect
-	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/lufia/plan9stats v0.0.0-20230326075908-cb1d2100619a // indirect
+	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
+	github.com/allegro/bigcache/v3 v3.1.0
+	github.com/google/gops v0.3.28
 	github.com/pkg/errors v0.9.1
-	github.com/power-devops/perfstat v0.0.0-20221212215047-62379fc7944b // indirect
-	github.com/shirou/gopsutil/v3 v3.23.8 // indirect
-	github.com/shoenig/go-m1cpu v0.1.6 // indirect
-	github.com/spf13/cobra v1.7.0 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/tklauser/go-sysconf v0.3.12 // indirect
-	github.com/tklauser/numcpus v0.6.1 // indirect
-	github.com/xlab/treeprint v1.2.0 // indirect
-	github.com/yusufpapurcu/wmi v1.2.3 // indirect
-	golang.org/x/mod v0.12.0 // indirect
-	golang.org/x/sys v0.12.0 // indirect
-	golang.org/x/tools v0.11.1 // indirect
-	gorm.io/datatypes v1.2.0 // indirect
-	gorm.io/gen v0.3.23 // indirect
-	gorm.io/gorm v1.25.2 // indirect
-	gorm.io/hints v1.1.2 // indirect
-	gorm.io/plugin/dbresolver v1.4.2 // indirect
-	rsc.io/goversion v1.2.0 // indirect
+	golang.org/x/sys v0.14.0 // indirect
 )
