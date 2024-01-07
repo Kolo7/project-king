@@ -6,7 +6,7 @@ import (
 	"github.com/recolabs/microgen/examples/svc/entity"
 )
 
-// @microgen middleware, logging, grpc, http, recovering, main
+// @microgen middleware, logging, tracing, http, recovering, main
 type StringService interface {
 	// @logs-ignore ans, err
 	Uppercase(ctx context.Context, stringsMap map[string]string) (ans string, err error)

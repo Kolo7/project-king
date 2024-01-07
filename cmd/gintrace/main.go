@@ -16,19 +16,17 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/trace"
-	"google.golang.org/grpc/credentials"
 )
 
 var (
-	serviceName  = os.Getenv("SERVICE_NAME")
-	signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
-	collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
-	insecure     = os.Getenv("INSECURE_MODE")
+	serviceName = os.Getenv("SERVICE_NAME")
+	// signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
+	// collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+	// insecure = os.Getenv("INSECURE_MODE")
 
 	rdAddr = "0.0.0.0:6379"
 	rdPwd  = "gHmNkVBd88sZybj"
@@ -103,27 +101,10 @@ func main() {
 }
 
 func initTracer() func(context.Context) error {
-
-	headers := map[string]string{
-		"signoz-access-token": signozToken,
-	}
-
-	secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
-	if len(insecure) > 0 {
-		secureOption = otlptracegrpc.WithInsecure()
-	}
-
-	exporter, err := otlptrace.New(
-		context.Background(),
-		otlptracegrpc.NewClient(
-			secureOption,
-			otlptracegrpc.WithEndpoint(collectorURL),
-			otlptracegrpc.WithHeaders(headers),
-		),
-	)
+	exporter, err := otlptracegrpc.New(context.Background())
 
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	resources, err := resource.New(
 		context.Background(),
@@ -133,7 +114,7 @@ func initTracer() func(context.Context) error {
 		),
 	)
 	if err != nil {
-		log.Printf("Could not set resources: ", err)
+		panic(err)
 	}
 
 	otel.SetTracerProvider(
